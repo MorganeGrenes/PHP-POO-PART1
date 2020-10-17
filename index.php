@@ -1,19 +1,21 @@
 <?php
 
-require_once('Bicycle.php');
-require_once('Car.php');
+require_once 'Bicycle.php';
+require_once 'Car.php';
+require_once 'vehicle.php';
+require_once 'Truck.php';
 
-$bike = new Bicycle();
+
+$bike = new Bicycle('red', 1);
 var_dump($bike);
-$bike->setColor('red');
 $bike->setCurrentSpeed(0);
 var_dump($bike);
 
-echo $bike->getForward();
+echo $bike->Forward();
 echo '<br> Vitesse du vélo : ' .$bike->getCurrentSpeed() . 'km/h <br>';
-echo $bike->getBrake();
+echo $bike->Brake();
 echo '<br> Vitesse du vélo : ' .$bike->getCurrentSpeed() . ' km/h';
-echo $bike->getBrake();
+echo $bike->Brake();
 
 
 $tuture = new Car('blue', 5, 'diesel');
@@ -23,3 +25,18 @@ $volkswagen = new Car('black', 4, 'gasoline');
 $volkswagen->setCurrentSpeed(0);
 var_dump($volkswagen);
 echo $volkswagen->start();
+
+
+
+
+$bicycle = new Bicycle('blue', 1);
+echo $bicycle->forward();
+var_dump($bicycle);
+
+var_dump(Car::ALLOWED_ENERGIES);
+
+
+$truck1 = new Truck(16, 0, 'yellow', '2', 'fuel');
+echo $truck1->setEmpty(17);
+echo $truck1->forward();
+echo $truck1->brake();
