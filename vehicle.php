@@ -1,6 +1,6 @@
 <?php
 
-class Vehicle
+abstract class Vehicle
 {
     protected $nbWheels;
     protected $currentSpeed;
@@ -79,4 +79,5 @@ class Vehicle
     {
         $this->nbWheels = $nbWheels;
     }
+    abstract public function changeWheel();
 }

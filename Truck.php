@@ -1,29 +1,40 @@
 <?php
 require_once 'vehicle.php';
 class Truck extends Vehicle{
-    private $storage;
-    private $cargo = 0;
+    private $maxStorage;
+    private $storage = 0;
 
-    public function __construct(int $storage, int $cargo, $color, $nbSeats, $energy){
-        parent::__construct($color, $nbSeats, $energy);
-        $this->storage = $storage;
-        $this->cargo = $cargo;
+    public function __construct(int $maxStorage, $color, $nbSeats, $energy){
+        parent::__construct($color, $nbSeats);
+        $this->maxStorage = $maxStorage;
     }
-    public function getEmpty(): string
+    public function isFull(): string
     {
-        return $this->storage;
-
-    }
-    public function setEmpty($storage): string
-    {
-        $sentence = "";
-        if($this->storage <= 15){
-            $this->storage = $storage;
-            $sentence = 'in filling';
+        if($this->storage < $this->maxStorage){
+            return 'in filling';
         }else
         {
-            $sentence = 'full';
+            return 'full';
         }
-        return $sentence;
+    }
+
+    public function getMaxStorage(){
+        return $this->maxStorage;
+    }
+
+    public function getStorage(){
+        return $this->storage;
+    }
+
+    public function setMaxStorage($maxStorage){
+        $this->maxStorage = $maxStorage;
+
+    }
+    public function setStorage($storage){
+        $this->storage = $storage;
+    }
+
+    public function changeWheel(){
+        return "";
     }
 }

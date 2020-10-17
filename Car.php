@@ -15,23 +15,29 @@ class Car extends Vehicle{
         $this->energy = $energy;
 
     }
+
     public function getEnergy(): string
     {
         return $this->energy;
     }
-    public function setEnergy(string $energy): Car
+
+    public function setEnergy(string $energy): void
     {
         if(in_array($energy, self::ALLOWED_ENERGIES)){
-            $this->setEnergy($energy);
+            $this->energy = $energy;
         }
-        return $this;
     }
+
     public function getEnergyLevel():string
     {
         return $this->energyLevel;
     }
+
     public function setEnergyLevel(int $energyLevel): void
     {
         $this->energyLevel = $energyLevel;
+    }
+    public function changeWheel(){
+        return "";
     }
 } 

@@ -36,7 +36,11 @@ var_dump($bicycle);
 var_dump(Car::ALLOWED_ENERGIES);
 
 
-$truck1 = new Truck(16, 0, 'yellow', '2', 'fuel');
-echo $truck1->setEmpty(17);
+$truck1 = new Truck(16, 'yellow', 2, 'fuel');
+
 echo $truck1->forward();
 echo $truck1->brake();
+echo $truck1->setStorage(16);
+echo $truck1->isFull();
+
+
