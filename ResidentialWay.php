@@ -7,12 +7,11 @@ final class ResidentialWay extends HighWay{
     {
         parent::__construct(2, 50);
         $this->currentVehicles = $currentVehicles;
-       
-     
     }
+
     public function addVehicle(Vehicle $vehicle)
     {
-            $this->setCurrentVehicles = $vehicle;  
+            $this->setCurrentVehicles($vehicle);  
     }
     
 }

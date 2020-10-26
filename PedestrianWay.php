@@ -9,10 +9,11 @@ final class PedestrianWay extends HighWay
         parent::__construct(1, 10);
         $this->currentVehicles = $currentVehicles;
     }
+
     public function addVehicle(Vehicle $vehicle)
     {
         if ($vehicle instanceof SkateBoard || $vehicle instanceof Bike){
-            $this->setCurrentVehicles = $vehicle;
+            $this->setCurrentVehicles($vehicle);
         } else {
             echo 'This vehicle is not allowed on Pedestrianway';
         }

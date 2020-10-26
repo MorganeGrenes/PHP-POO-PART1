@@ -2,7 +2,7 @@
 require_once 'vehicle.php';
 
 abstract class HighWay{
-    protected $currentVehicles;
+    protected $currentVehicles = [];
     protected $nbLane;
     protected $maxSpeed;
 
@@ -18,7 +18,7 @@ abstract class HighWay{
     
     public function setCurrentVehicles($currentVehicles)
     {
-        $this->currentVehicles = $currentVehicles;
+        $this->currentVehicles[]= $currentVehicles;
 
     }
     public function getCurrentVehicles(): array
